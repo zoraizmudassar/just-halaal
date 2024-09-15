@@ -84,7 +84,7 @@
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate sidebar--badge-container">
                                         {{translate('messages.all')}}
-                                        <span class="badge badge-soft-info badge-pill ml-1">
+                                        <span class="badge badge-soft-info badge-pill ml-1 text-white">
                                             {{\App\Models\Order::where('store_id', \App\CentralLogics\Helpers::get_store_id())
                                                 ->where(function($query){
                                                     return $query->whereNotIn('order_status',(config('order_confirmation_model') == 'store'|| \App\CentralLogics\Helpers::get_store_data()->self_delivery_system)?['failed','canceled', 'refund_requested', 'refunded']:['pending','failed','canceled', 'refund_requested', 'refunded'])
@@ -101,7 +101,7 @@
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate sidebar--badge-container">
                                         {{translate('messages.pending')}} {{(config('order_confirmation_model') == 'store' || \App\CentralLogics\Helpers::get_store_data()->self_delivery_system)?'':translate('messages.take_away')}}
-                                            <span class="badge badge-soft-success badge-pill ml-1">
+                                            <span class="badge badge-soft-success badge-pill ml-1 text-white">
                                             @if(config('order_confirmation_model') == 'store' || \App\CentralLogics\Helpers::get_store_data()->self_delivery_system)
                                             {{\App\Models\Order::where(['order_status'=>'pending','store_id'=>\App\CentralLogics\Helpers::get_store_id()])->StoreOrder()->OrderScheduledIn(30)->NotDigitalOrder()->count()}}
                                             @else
@@ -117,7 +117,7 @@
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate sidebar--badge-container">
                                         {{translate('messages.confirmed')}}
-                                            <span class="badge badge-soft-success badge-pill ml-1">
+                                            <span class="badge badge-soft-success badge-pill ml-1 text-white">
                                             {{\App\Models\Order::whereIn('order_status',['confirmed', 'accepted'])->StoreOrder()->whereNotNull('confirmed')->where('store_id', \App\CentralLogics\Helpers::get_store_id())->OrderScheduledIn(30)->NotDigitalOrder()->count()}}
                                         </span>
                                     </span>
@@ -133,7 +133,7 @@
                                         @else
                                         {{translate('messages.processing')}}
                                         @endif
-                                        <span class="badge badge-soft-info badge-pill ml-1">
+                                        <span class="badge badge-soft-info badge-pill ml-1 text-white">
                                             {{\App\Models\Order::where(['order_status'=>'processing', 'store_id'=>\App\CentralLogics\Helpers::get_store_id()])->StoreOrder()->NotDigitalOrder()->count()}}
                                         </span>
                                     </span>
@@ -144,7 +144,7 @@
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate sidebar--badge-container">
                                         {{translate('messages.ready_for_delivery')}}
-                                        <span class="badge badge-soft-info badge-pill ml-1">
+                                        <span class="badge badge-soft-info badge-pill ml-1 text-white">
                                             {{\App\Models\Order::where(['order_status'=>'handover', 'store_id'=>\App\CentralLogics\Helpers::get_store_id()])->StoreOrder()->NotDigitalOrder()->count()}}
                                         </span>
                                     </span>
@@ -155,7 +155,7 @@
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate sidebar--badge-container">
                                         {{translate('messages.item_on_the_way')}}
-                                        <span class="badge badge-soft-info badge-pill ml-1">
+                                        <span class="badge badge-soft-info badge-pill ml-1 text-white">
                                             {{\App\Models\Order::where(['order_status'=>'picked_up', 'store_id'=>\App\CentralLogics\Helpers::get_store_id()])->StoreOrder()->NotDigitalOrder()->count()}}
                                         </span>
                                     </span>
@@ -166,7 +166,7 @@
                                     <span class="tio-circle nav-indicator-icon"></span>
                                     <span class="text-truncate sidebar--badge-container">
                                         {{translate('messages.delivered')}}
-                                            <span class="badge badge-soft-success badge-pill ml-1">
+                                            <span class="badge badge-soft-success badge-pill ml-1 text-white">
                                             {{\App\Models\Order::where(['order_status'=>'delivered','store_id'=>\App\CentralLogics\Helpers::get_store_id()])->StoreOrder()->NotDigitalOrder()->count()}}
                                         </span>
                                     </span>
@@ -231,7 +231,7 @@
 
                     <!-- AddOn -->
                     @if(\App\CentralLogics\Helpers::employee_module_permission_check('addon'))
-                    <li hidden class="navbar-vertical-aside-has-menu {{Request::is('store-panel/addon*')?'active':''}}">
+                    <li class="navbar-vertical-aside-has-menu {{Request::is('store-panel/addon*')?'active':''}}">
                         <a class="js-navbar-vertical-aside-menu-link nav-link"
                             href="{{route('vendor.addon.add-new')}}" title="{{translate('messages.addons')}}"
                         >
@@ -255,7 +255,7 @@
                             <li class="nav-item {{Request::is('store-panel/item/add-new')?'active':''}}">
                                 <a class="nav-link " href="{{route('vendor.item.add-new')}}"
                                     title="{{translate('messages.add_new_item')}}">
-                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="tio-circle nav-indicator-icon text-white"></span>
                                     <span
                                         class="text-truncate">{{translate('messages.add_new')}}</span>
                                 </a>
@@ -263,7 +263,7 @@
                             <li class="nav-item {{Request::is('store-panel/item/list')?'active':''}}">
                                 <a class="nav-link " href="{{route('vendor.item.list')}}"
                                     title="{{translate('messages.items_list')}}">
-                                    <span class="tio-circle nav-indicator-icon"></span>
+                                    <span class="tio-circle nav-indicator-icon text-white"></span>
                                     <span class="text-truncate">{{translate('messages.list')}}</span>
                                 </a>
                             </li>

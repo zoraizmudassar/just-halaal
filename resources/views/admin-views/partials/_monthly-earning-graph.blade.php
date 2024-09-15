@@ -54,9 +54,9 @@
                   },
                   {
                     "data": [{{$delivery_commission[1]}},{{$delivery_commission[2]}},{{$delivery_commission[3]}},{{$delivery_commission[4]}},{{$delivery_commission[5]}},{{$delivery_commission[6]}},{{$delivery_commission[7]}},{{$delivery_commission[8]}},{{$delivery_commission[9]}},{{$delivery_commission[10]}},{{$delivery_commission[11]}},{{$delivery_commission[12]}}],
-                    "backgroundColor": "#8E78C7",
-                    "hoverBackgroundColor": "#8E78C7",
-                    "borderColor": "#8E78C7"
+                    "backgroundColor": "#FF9B2E",
+                    "hoverBackgroundColor": "#FF9B2E",
+                    "borderColor": "#FF9B2E"
                   }
                   ]
                 },

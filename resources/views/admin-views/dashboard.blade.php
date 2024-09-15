@@ -402,7 +402,7 @@
             dataLabels: {
                 enabled: false,
                 style: {
-                    colors: ['#8E78C7', '#00aa96', '#b9e0e0',]
+                    colors: ['#FF9B2E', '#00aa96', '#b9e0e0',]
                 }
             },
             responsive: [{
@@ -413,9 +413,9 @@
                     },
                 }
             }],
-            colors: ['#8E78C7','#00aa96', '#111'],
+            colors: ['#FF9B2E','#00aa96', '#111'],
             fill: {
-                colors: ['#8E78C7','#00aa96', '#b9e0e0']
+                colors: ['#FF9B2E','#00aa96', '#b9e0e0']
             },
             legend: {
                 show: false

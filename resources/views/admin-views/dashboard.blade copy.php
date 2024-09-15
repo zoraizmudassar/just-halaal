@@ -235,7 +235,7 @@
                     data: ['{{$data['customer']}}', '{{$data['stores']}}', '{{$data['delivery_man']}}'],
                     backgroundColor: [
                         '#00AA96',
-                        '#8E78C7',
+                        '#FF9B2E',
                         '#b9e0e0'
                     ],
                     hoverOffset: 4

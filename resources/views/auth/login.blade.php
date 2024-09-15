@@ -20,7 +20,7 @@
     <title>{{translate('messages.login')}}</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('images/admin/css/images/favicon.png')}}">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
             <div class="auth-left-cont">
                 @php($store_logo = \App\Models\BusinessSetting::where(['key' => 'logo'])->first()->value)
                 <img src="{{ asset('storage/business/' . $store_logo) }}" alt="public/img">
-                <h2 class="title text-white">Inspiration<span class="d-block">In Every Puff</span> <strong class="text-white">Join Market</strong></h2>
+                <h3 class="title text-white">Welcome to<span class="d-block"> <strong class="text-white">Just Halaal</strong></span> </h3>
             </div>
         </div>
         <div class="auth-wrapper-right">

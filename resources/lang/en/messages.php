@@ -3620,4 +3620,7 @@
   'Showing' => 'Showing',
   'results' => 'Results',
   'Go to page :page' => 'Go to page :page',
+  'profile_updated_successfully' => 'Profile updated successfully',
+  'module_status_updated' => 'Module status updated',
+  'Restaurant' => 'Restaurant',
 );

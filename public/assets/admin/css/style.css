@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap");
 :root {
-    --primary-clr: #24bac3;
+    --primary-clr: #FF9B2E;
     --secondary-clr: #99a7ba;
     --primary: #6c52ad;
     --title-clr: #334257;
-    --dark-clr: #8E78C7;
+    --dark-clr: #FF9B2E;
     --base-clr: #2aa26a;
     --base-clr-2: #fff;
     --border-clr: #99a7ba45;
@@ -130,7 +130,7 @@
 }
 
 .menu-bg {
-    background-color: #8E78C7;
+    background-color: #FF9B2E;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -201,7 +201,7 @@
 .cmn--media .card-title {
     font-size: 14px;
     font-weight: 700;
-    color: #8E78C7;
+    color: #FF9B2E;
 }
 
 .right-dropdown-icon {
@@ -213,7 +213,7 @@
     content: "";
     width: 8px;
     height: 8px;
-    border: 4px solid #8E78C7;
+    border: 4px solid #FF9B2E;
     border-top-color: transparent;
     border-inline-start-color: transparent;
     transform: rotate(45deg);
@@ -241,7 +241,7 @@
 .cmn--media .card-title {
     font-size: 14px;
     font-weight: 700;
-    color: #8E78C7;
+    color: #FF9B2E;
 }
 
 .right-dropdown-icon {
@@ -253,7 +253,7 @@
     content: "";
     width: 8px;
     height: 8px;
-    border: 4px solid #8E78C7;
+    border: 4px solid #FF9B2E;
     border-top-color: transparent;
     border-inline-start-color: transparent;
     transform: rotate(45deg);
@@ -1298,7 +1298,7 @@ aside .nav-link {
     /* identical to box height */
     text-align: center;
     letter-spacing: -0.02em;
-    color: #8E78C7;
+    color: #FF9B2E;
 }
 
 .top--deliveryman .info {
@@ -1308,7 +1308,7 @@ aside .nav-link {
     /* identical to box height */
     text-align: center;
     letter-spacing: -0.02em;
-    color: #8E78C7;
+    color: #FF9B2E;
 }
 
 .top--deliveryman .info span {
@@ -1348,7 +1348,7 @@ aside .nav-link {
     font-size: 10px;
     line-height: 12px;
     letter-spacing: -0.02em;
-    color: #8E78C7;
+    color: #FF9B2E;
 }
 
 .text-title {
@@ -1432,7 +1432,7 @@ aside .nav-link {
     font-size: 14px;
     line-height: 17px;
     letter-spacing: -0.02em;
-    color: #8E78C7;
+    color: #FF9B2E;
 }
 
 .top--resturant
@@ -1467,7 +1467,7 @@ aside .nav-link {
     font-size: 14px;
     line-height: 17px;
     text-align: center;
-    color: #8E78C7;
+    color: #FF9B2E;
     border: none !important;
     background: #ffffff;
     box-shadow: 0px 4px 4px rgba(51, 66, 87, 0.05) !important;
@@ -1509,7 +1509,7 @@ aside .nav-link {
 .grid-card .label_1 {
     position: absolute;
     font-size: 10px;
-    background: #8E78C7;
+    background: #FF9B2E;
     color: #fff;
     min-width: 60px;
     padding: 3px 9px;
@@ -2701,13 +2701,13 @@ textarea.form-control[readonly] {
 }
 
 .badge-soft-primary {
-    color: #24bac3;
+    color: #FF9B2E;
     background-color: rgba(0, 241, 255, 0.1);
 }
 
 a.badge-soft-primary:focus,
 a.badge-soft-primary:hover {
-    background: #24bac3;
+    background: #FF9B2E;
 }
 
 .btn--folder {
@@ -2972,7 +2972,7 @@ a.badge-soft-primary:hover {
 }
 
 .nav-sub {
-    background: #8E78C7 !important;
+    background: #FF9B2E !important;
 }
 
 .scroll-bar {
@@ -3686,7 +3686,7 @@ td .amount--input {
 .bootstrap-tagsinput input {
     width: 100%;
     height: 36px !important;
-    color: #8E78C7;
+    color: #FF9B2E;
     background-color: #fff;
     border: 0.0625rem solid #e7eaf3;
     border-radius: 0.3125rem;
@@ -3765,7 +3765,7 @@ td .amount--input {
 }
 
 .chart-bg-1 {
-    background: #8E78C7;
+    background: #FF9B2E;
 }
 
 .chart-bg-2 {
@@ -4332,7 +4332,7 @@ td .amount--input {
 
 .start--time,
 .end--time {
-    border: 1px solid #8E78C7;
+    border: 1px solid #FF9B2E;
     border-radius: 5px;
     text-transform: uppercase;
     padding: 8px 14px;
@@ -4887,7 +4887,7 @@ div.scroll-down {
 }
 
 .bg--8E78C7 {
-    background-color: #8E78C7;
+    background-color: #FF9B2E;
 }
 
 .loading-inner {
@@ -9075,7 +9075,7 @@ body > .initial-38-1 {
 }
 
 .popover-navigation .btn[data-role="next"] {
-    background: #8E78C7;
+    background: #FF9B2E;
 }
 
 .popover-navigation .btn[data-role="end"] {
@@ -9198,7 +9198,7 @@ body > .initial-38-1 {
 }
 
 .sidebar--search-form {
-    background-color: #8E78C7;
+    background-color: #FF9B2E;
     position: sticky;
     top: 0;
     z-index: 9;
@@ -10746,7 +10746,7 @@ body > .initial-38-1 {
 }
 
 .checkbox-color-primary {
-    color: #8E78C7 !important;
+    color: #FF9B2E !important;
 }
 
 .d--none {
