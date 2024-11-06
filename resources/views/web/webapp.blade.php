@@ -17,14 +17,14 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="web/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="web/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="/web/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="/web/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="web/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/web/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="web/css/style.css" rel="stylesheet">
+        <link href="/web/css/style.css" rel="stylesheet">
     </head>
 
 <body class="tt-magic-cursor">
@@ -45,12 +45,12 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="web/lib/easing/easing.min.js"></script>
-    <script src="web/lib/waypoints/waypoints.min.js"></script>
-    <script src="web/lib/lightbox/js/lightbox.min.js"></script>
-    <script src="web/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/web/lib/easing/easing.min.js"></script>
+    <script src="/web/lib/waypoints/waypoints.min.js"></script>
+    <script src="/web/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="/web/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="web/js/main.js"></script>
+    <script src="/web/js/main.js"></script>
 </body>
 </html>

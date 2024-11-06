@@ -102,7 +102,7 @@
             <div class="tab-class text-center">
                 <div class="row g-4">
                     <div class="col-lg-4 text-start">
-                        <h1>Our Organic Products</h1>
+                        <h1>Our Products Categories</h1>
                     </div>
                     <div class="col-lg-8 text-end">
                         <ul class="nav nav-pills d-inline-flex text-center mb-5">
@@ -162,48 +162,29 @@
 
 
     <!-- Featurs Start -->
-    <div class="container-fluid service py-5">
+    <div class="container-fluid vesitable py-5">
         <div class="container py-5">
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <a href="#">
-                        <div class="service-item bg-secondary rounded border border-secondary">
-                            <img src="web/img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
-                            <div class="px-4 rounded-bottom">
-                                <div class="service-content bg-primary text-center p-4 rounded">
-                                    <h5 class="text-white">Fresh Apples</h5>
-                                    <h3 class="mb-0">20% OFF</h3>
-                                </div>
+            <h1 class="mb-0">Our Resturants</h1>
+            <div class="owl-carousel vegetable-carousel justify-content-center">
+                @foreach ($stores  as $store)
+                    <div class="border border-primary rounded position-relative vegetable-item">
+                        <div class="vegetable-img">
+                            <img src="{{ asset('storage/product/' . $store->cover_photo) }}"   onerror="this.onerror=null; this.src='https://placehold.co/600x600';"   class="img-fluid w-100 rounded-top" alt="{{ $store->name }}">
+                        </div>
+                        <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">{{ $store->name }}</div>
+                        <div class="p-4 rounded-bottom">
+                            <h4>{{ $store->name ?? 'null' }}</h4>
+                            <p>{{ $store->description ?? 'null' }}</p>
+
+                            <div class="d-flex justify-content-end flex-lg-wrap">
+                                {{-- <p class="text-dark fs-5 fw-bold mb-0">${{ number_format($product->price, 2) }} </p> --}}
+                                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary">
+                                    <i class="fa fa-shopping-bag me-2 text-primary"></i> visit
+                                </a>
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="#">
-                        <div class="service-item bg-dark rounded border border-dark">
-                            <img src="web/img/featur-2.jpg" class="img-fluid rounded-top w-100" alt="">
-                            <div class="px-4 rounded-bottom">
-                                <div class="service-content bg-light text-center p-4 rounded">
-                                    <h5 class="text-primary">Tasty Fruits</h5>
-                                    <h3 class="mb-0">Free delivery</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="#">
-                        <div class="service-item bg-primary rounded border border-primary">
-                            <img src="web/img/featur-3.jpg" class="img-fluid rounded-top w-100" alt="">
-                            <div class="px-4 rounded-bottom">
-                                <div class="service-content bg-secondary text-center p-4 rounded">
-                                    <h5 class="text-white">Exotic Vegitable</h5>
-                                    <h3 class="mb-0">Discount 30$</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -213,7 +194,7 @@
     <!-- Vesitable Shop Start-->
     <div class="container-fluid vesitable py-5">
         <div class="container py-5">
-            <h1 class="mb-0">Fresh Organic Vegetables</h1>
+            <h1 class="mb-0">Our Products</h1>
             <div class="owl-carousel vegetable-carousel justify-content-center">
                 @foreach ($products as $product)
                     <div class="border border-primary rounded position-relative vegetable-item">
@@ -277,13 +258,16 @@
                 <h1 class="display-4">Bestseller Products</h1>
                 <p>Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</p>
             </div>
-            <div class="row g-4">
-                @foreach ($products as $product)
-                    <div class="col-lg-6 col-xl-4">
+            <div class="row g-4" id="product-container">
+                @foreach ($products as $index => $product)
+                    <div class="col-lg-6 col-xl-4 product-item" style="display: {{ $index < 9 ? 'block' : 'none' }};">
                         <div class="p-4 rounded bg-light">
                             <div class="row align-items-center">
                                 <div class="col-6">
-                                    <img src="{{ asset('storage/product/' . $product->image) }}" onerror="this.onerror=null; this.src='https://placehold.co/600x600';" class="img-fluid rounded-circle w-100" alt="{{ $product->name }}">
+                                    <img src="{{ asset('storage/product/' . $product->image) }}"
+                                         onerror="this.onerror=null; this.src='https://placehold.co/600x600';"
+                                         class="img-fluid rounded-circle w-100"
+                                         alt="{{ $product->name }}">
                                 </div>
                                 <div class="col-6">
                                     <a href="#" class="h5">{{ $product->name }}</a>
@@ -302,9 +286,15 @@
                     </div>
                 @endforeach
             </div>
-
+            <!-- Show More Button -->
+            @if (count($products) > 9)
+                <div class="text-center mt-4">
+                    <button id="show-more-btn" class="btn btn-primary">Show More</button>
+                </div>
+            @endif
         </div>
     </div>
+
     <!-- Bestsaler Product End -->
 
 
@@ -442,5 +432,25 @@
 
 
 
+    <script>
+        document.getElementById('show-more-btn').addEventListener('click', function () {
+            // Select hidden products
+            const hiddenProducts = document.querySelectorAll('.product-item[style*="display: none"]');
+            let count = 0;
+
+            // Show up to 9 more products
+            hiddenProducts.forEach(product => {
+                if (count < 9) {
+                    product.style.display = 'block';
+                    count++;
+                }
+            });
+
+            // Hide the button if no more products are hidden
+            if (document.querySelectorAll('.product-item[style*="display: none"]').length === 0) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
 
 @endsection
