@@ -88,17 +88,17 @@ class Category extends Model
         return $slug;
     }
 
-    public function getNameAttribute($value){
-        if (count($this->translations) > 0) {
-            foreach ($this->translations as $translation) {
-                if ($translation['key'] == 'name') {
-                    return $translation['value'];
-                }
-            }
-        }
+    // public function getNameAttribute($value){
+    //     if (count($this->translations) > 0) {
+    //         foreach ($this->translations as $translation) {
+    //             if ($translation['key'] == 'name') {
+    //                 return $translation['value'];
+    //             }
+    //         }
+    //     }
 
-        return $value;
-    }
+    //     return $value;
+    // }
 
     protected static function booted()
     {

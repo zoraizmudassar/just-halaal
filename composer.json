@@ -29,7 +29,7 @@
         "paypal/paypal-checkout-sdk": "^1.0",
         "rap2hpoutre/fast-excel": "^5.2",
         "razorpay/razorpay": "^2.8",
-        "stripe/stripe-php": "^10.10",
+        "stripe/stripe-php": "^16.2",
         "twilio/sdk": "^6.39",
         "unicodeveloper/laravel-paystack": "^1.0",
         "xendit/xendit-php": "^2.19"

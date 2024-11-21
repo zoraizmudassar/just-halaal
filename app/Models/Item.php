@@ -117,6 +117,13 @@ class Item extends Model
     //     });
     // }
 
+
+public function addOns()
+{
+    return $this->belongsToMany(AddOn::class, 'item_add_ons', 'item_id', 'add_on_id');
+}
+
+
     public function flashSaleItems()
     {
         return $this->hasMany(FlashSaleItem::class);

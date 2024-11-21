@@ -62,17 +62,17 @@ class Store extends Model
         return $this->morphMany(Translation::class, 'translationable');
     }
 
-    public function getNameAttribute($value){
-        if (count($this->translations) > 0) {
-            foreach ($this->translations as $translation) {
-                if ($translation['key'] == 'name') {
-                    return $translation['value'];
-                }
-            }
-        }
+    // public function getNameAttribute($value){
+    //     if (count($this->translations) > 0) {
+    //         foreach ($this->translations as $translation) {
+    //             if ($translation['key'] == 'name') {
+    //                 return $translation['value'];
+    //             }
+    //         }
+    //     }
 
-        return $value;
-    }
+    //     return $value;
+    // }
 
     public function getAddressAttribute($value){
         if (count($this->translations) > 0) {

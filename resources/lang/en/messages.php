@@ -3623,4 +3623,10 @@
   'profile_updated_successfully' => 'Profile updated successfully',
   'module_status_updated' => 'Module status updated',
   'Restaurant' => 'Restaurant',
+  'minimum_delivery_time_should_be_more_than_10_min' => 'Minimum delivery time should be more than 10 min',
+  'remove_sub_categories_first' => 'Remove sub categories first',
+  'store_removed' => 'Store removed',
+  'addon_update' => 'Addon update',
+  'addon_updated_successfully' => 'Addon updated successfully',
+  'please_add_more_options_or_change_the_max_value_for' => 'Please add more options or change the max value for',
 );

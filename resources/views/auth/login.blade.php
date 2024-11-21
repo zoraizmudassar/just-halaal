@@ -55,7 +55,6 @@
                 <!-- Form -->
                 <form class="" action="{{route('login_post')}}" method="post" id="form-id">
                     @csrf
-                    <input type="hidden" name="role" value="{{  $role ?? null }}">
                     <div class="auth-header">
                         <div class="mb-5">
                             <h2 class="title">{{ translate($role) }} {{translate('messages.panel')}} </h2>
@@ -76,7 +75,6 @@
                             <option hidden value="vendor_employee" {{ $role == 'vendor_employee' ? 'selected' : '' }}>{{ translate('store_employee') }}</option>
                         </select>
                     </div>
-                    <!-- End Form Group -->
 
                     <!-- Form Group -->
                     <div class="js-form-message form-group">
@@ -145,37 +143,6 @@
 
                     <button type="submit" class="btn btn-lg btn-block btn--primary mt-xxl-3">{{translate('messages.login')}}</button>
                 </form>
-                <!-- End Form -->
-                @if(env('APP_MODE') == 'demo')
-                @if (isset($role) && $role == 'admin')
-                <div class="auto-fill-data-copy">
-                    <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div>
-                            <span class="d-block"><strong>Email</strong> : admin@admin.com</span>
-                            <span class="d-block"><strong>Password</strong> : 12345678</span>
-                        </div>
-                        <div>
-                            <button class="btn action-btn btn--primary m-0" onclick="copy_cred()"><i class="tio-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                @endif
-                @if (isset($role) && $role == 'vendor')
-                <div class="auto-fill-data-copy">
-                    <div class="d-flex flex-wrap align-items-center justify-content-between">
-                        <div>
-                            <span class="d-block"><strong>Email</strong> : test.restaurant@gmail.com</span>
-                            <span class="d-block"><strong>Password</strong> : 12345678</span>
-                        </div>
-                        <div>
-                            <button class="btn action-btn btn--primary m-0" onclick="copy_cred2()"><i class="tio-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                @endif
-                @endif
             </div>
             <!-- End Card -->
 

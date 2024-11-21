@@ -44,12 +44,13 @@ class AddOn extends Model
         return $this->belongsTo(Store::class);
     }
 
+
     protected static function booted()
     {
         if(auth('vendor')->check() || auth('vendor_employee')->check())
         {
             static::addGlobalScope(new StoreScope);
-        } 
+        }
         static::addGlobalScope(new ZoneScope);
         static::addGlobalScope('translate', function (Builder $builder) {
             $builder->with(['translations' => function($query){

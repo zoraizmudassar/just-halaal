@@ -46,7 +46,7 @@ class AddOnController extends Controller
         $request->validate([
             'name.*' => 'max:191',
             'name'=>'array|required',
-            'store_id' => 'required',
+          'store_id' => 'required|exists:stores,id',
             'price' => 'required|numeric|between:0,999999999999.99',
             'name.0'=>'required',
         ], [
