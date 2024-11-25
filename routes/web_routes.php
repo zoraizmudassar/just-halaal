@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\web\OrderController;
 use App\Http\Controllers\web\ProfileController;
 use App\Http\Controllers\web\AuthController;
 use App\Http\Controllers\web\CartController;
@@ -30,9 +31,12 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
 // Profile Routes
-Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/user/profile', [ProfileController::class, 'show'])->name('profile.show');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/user/orders', [OrderController::class, 'index'])->name('user.orders');
 
 // Stripe Routes
 Route::get('stripe', [StripeController::class, 'index']);
 Route::post('stripe', [StripeController::class, 'processPayment'])->name('stripe.process');
+Route::get('/payment', [StripeController::class, 'showPaymentForm'])->name('payment.form');
+Route::post('/payment', [StripeController::class, 'processPayment'])->name('payment.process');

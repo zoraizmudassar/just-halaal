@@ -3629,4 +3629,5 @@
   'addon_update' => 'Addon update',
   'addon_updated_successfully' => 'Addon updated successfully',
   'please_add_more_options_or_change_the_max_value_for' => 'Please add more options or change the max value for',
+  'store deleted!' => 'Store deleted!',
 );

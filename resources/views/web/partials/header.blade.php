@@ -68,8 +68,8 @@
                                 <i class="fas fa-user fa-2x"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                                <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                                {{-- <li><a class="dropdown-item" href="/settings">Settings</a></li> --}}
+                                <li><a class="dropdown-item" href="/user/profile">Profile</a></li>
+                                <li><a class="dropdown-item" href="/user/orders">Orders</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form action="{{ route('logout') }}" method="POST">

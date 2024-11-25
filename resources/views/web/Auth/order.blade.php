@@ -2,47 +2,53 @@
 
 @section('content')
 
-
+<div class="container-fluid page-header py-5">
+    <h1 class="text-center text-white display-6">Orders</h1>
+    <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">User</a></li>
+        <li class="breadcrumb-item active text-white">Orders</li>
+    </ol>
+</div>
 <div class="container mt-5">
-    <h2 class="mb-4">Profile</h2>
-
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
+    <h2 class="mb-4">Your Orders</h2>
 
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('profile.update') }}" method="POST">
-                @csrf
-
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $user->name) }}" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" value="{{ old('email', $user->email) }}" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password <small class="text-muted">(Leave blank to keep current password)</small></label>
-                    <input type="password" name="password" id="password" class="form-control">
-                </div>
-
-                <div class="mb-3">
-                    <label for="password_confirmation" class="form-label">Confirm Password</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Update Profile</button>
-            </form>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Order ID</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @forelse ($orders as $order)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $order->id }}</td>
+                            <td>{{ $order->status }}</td>
+                            <td>€{{ $order->total }}</td>
+                            <td>{{ $order->created_at->format('Y-m-d') }}</td>
+                            <td>
+                                <a href="#" class="btn btn-sm btn-primary">View</a>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="6" class="text-center">No orders found.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                {{ $orders->links() }}
+            </div>
         </div>
     </div>
 </div>
-
-
-
 @endsection

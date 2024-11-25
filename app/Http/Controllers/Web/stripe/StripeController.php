@@ -4,25 +4,41 @@ namespace App\Http\Controllers\web\stripe;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Stripe\Charge;
+use Stripe\Stripe;
 
 class StripeController extends Controller
 {
-    public function index()
+    public function showPaymentForm()
     {
-        return view('stripe');
+        return view('web.auth.stripe.payment');
     }
 
+    // Process the payment
     public function processPayment(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-
-        Charge::create([
-            "amount" => 1000, // Amount in cents ($10.00)
-            "currency" => "usd",
-            "source" => $request->stripeToken,
-            "description" => "Test payment from Laravel app",
+        // Validate the request
+        $request->validate([
+            'stripeToken' => 'required',
         ]);
 
-        return back()->with('success', 'Payment successful!');
+        // Set the Stripe API key
+        Stripe::setApiKey(config('services.stripe.secret'));
+
+        try {
+            // Create the charge on Stripe's servers
+            $charge = Charge::create([
+                'amount' => 1000, // Amount in cents ($10.00)
+                'currency' => 'usd',
+                'source' => $request->stripeToken,
+                'description' => 'Test payment from Laravel app',
+            ]);
+
+            // Payment successful
+            return redirect()->route('payment.form')->with('success', 'Payment Successful!');
+        } catch (\Exception $e) {
+            // Payment failed
+            return redirect()->route('payment.form')->with('error', $e->getMessage());
+        }
     }
 }

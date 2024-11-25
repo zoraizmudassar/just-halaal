@@ -16,6 +16,7 @@
         "gregwar/captcha": "^1.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
+        "laravel/cashier": "^15.5",
         "laravel/framework": "^10.0",
         "laravel/passport": "^11.0",
         "laravel/tinker": "^2.5",
@@ -29,7 +30,7 @@
         "paypal/paypal-checkout-sdk": "^1.0",
         "rap2hpoutre/fast-excel": "^5.2",
         "razorpay/razorpay": "^2.8",
-        "stripe/stripe-php": "^16.2",
+        "stripe/stripe-php": "^16.3",
         "twilio/sdk": "^6.39",
         "unicodeveloper/laravel-paystack": "^1.0",
         "xendit/xendit-php": "^2.19"
